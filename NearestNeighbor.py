@@ -70,10 +70,14 @@ class NearestNeighbor(object):
 
             distances = np.sqrt(np.sum(np.square(self.Xtr - X[i, :]), axis=1))
 
-            # find the k smallest distnaces for this image
-            k_min_indexes = hq.nsmallest(k, range(len(distances)), distances.take)
+           # find k indeces of the k smallest distnaces for this image
+            k_min_indexes = np.argsort(distances)[:k]
 
             #find highest vote
-           # votes =
+            votes = np.zeros(k, dtype = self.Ytr.dtype)
+            for j in xrange(k):
+                votes[j] = self.Ytr[k_min_indexes[j]]
+
+            #find the most frequent element in votes
 
         return Ypred
