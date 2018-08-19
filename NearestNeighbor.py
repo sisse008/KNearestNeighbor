@@ -74,10 +74,6 @@ class NearestNeighbor(object):
             k_min_indexes = hq.nsmallest(k, range(len(distances)), distances.take)
 
             #find highest vote
-            votes =
+           # votes =
 
-            # add prediction to prediction array
-            Ypred[i] = self.Ytr[min_index]
-        C:\Users\Danielle
-        Sisserman\AppData\Local\Programs\Python\Python36 - 32\DLLs\NearestNeighbor.py
         return Ypred
